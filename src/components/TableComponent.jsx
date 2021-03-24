@@ -2,7 +2,7 @@ import { faEdit, faInfo, faTrash, faUserAlt } from '@fortawesome/free-solid-svg-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
-import { Container, Button, Row, Col } from "reactstrap";
+import { Container, Button, Row, Col, Spinner } from "reactstrap";
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import { Link } from 'react-router-dom';
@@ -61,49 +61,59 @@ const defaultSorted = [{
     order: 'asc'
 }]
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state) => {
     return {
-        users: state.users.users
+        getUserList: state.users.getUserList,
+        errorUserList: state.users.errorUserList
     }
 }
 
 const TableComponent = (props) => {
     return (
         <Container>
-
-            <ToolkitProvider
-                bootstrap4
-                keyField='id'
-                data={props.users}
-                columns={columns}
-                defaultSorted={defaultSorted}
-                search
-            >
-                {
-                    props => (
-                        <div>
-                            <Row>
-                                <Col>
-                                    <Link to={"create"}>
-                                        <Button color="primary" size="md" className="mr-1 mb-1">
-                                            <FontAwesomeIcon icon={faUserAlt} /> Add User
-                                        </Button>
-                                    </Link>
-                                </Col>
-                                <Col>
-                                    <div className="float-right">
-                                        <SearchBar {...props.searchProps} placeholder="Pencarian" />
-                                    </div>
-                                </Col>
-                            </Row>
-                            <BootstrapTable
-                                {...props.baseProps}
-                                pagination={paginationFactory()}
-                            />
-                        </div>
-                    )
-                }
-            </ToolkitProvider>
+            { props.getUserList ?
+                <ToolkitProvider
+                    bootstrap4
+                    keyField='id'
+                    data={props.getUserList}
+                    columns={columns}
+                    defaultSorted={defaultSorted}
+                    search
+                >
+                    {
+                        props => (
+                            <div>
+                                <Row>
+                                    <Col>
+                                        <Link to={"create"}>
+                                            <Button color="primary" size="md" className="mr-1 mb-1">
+                                                <FontAwesomeIcon icon={faUserAlt} /> Add User
+                                    </Button>
+                                        </Link>
+                                    </Col>
+                                    <Col>
+                                        <div className="float-right">
+                                            <SearchBar {...props.searchProps} placeholder="Pencarian" />
+                                        </div>
+                                    </Col>
+                                </Row>
+                                <BootstrapTable
+                                    {...props.baseProps}
+                                    pagination={paginationFactory()}
+                                />
+                            </div>
+                        )
+                    }
+                </ToolkitProvider>
+                : 
+                <div className="text-center">
+                    { props.errorUserList ? 
+                        <h4>{props.errorUserList}</h4>
+                    :
+                        <Spinner color="primary"/>
+                    }
+                </div>
+            }
         </Container>
 
     )
