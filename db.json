@@ -1,0 +1,81 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "nama": "Ali Shodikin",
+            "alamat": "Semolowaru",
+            "umur": 21,
+            "nphp": "0822393999"
+        },
+        {
+            "id": 2,
+            "nama": "Shodikin Muhammad",
+            "alamat": "Bojonegoro",
+            "umur": 23,
+            "nphp": "08122393999"
+        },
+        {
+            "id": 3,
+            "nama": "Shodikin Al ALi",
+            "alamat": "Malang",
+            "umur": 22,
+            "nphp": "08244443999"
+        },
+        {
+            "id": 4,
+            "nama": "Adam Rayyan",
+            "alamat": "Lamongan",
+            "umur": 17,
+            "nphp": "08888773999"
+        },
+        {
+            "id": 5,
+            "nama": "Rayyan Alfarizqi",
+            "alamat": "Kenjeran",
+            "umur": 27,
+            "nphp": "08200019"
+        },
+        {
+            "id": 6,
+            "nama": "Alfarizqi Adam",
+            "alamat": "Tuban",
+            "umur": 29,
+            "nphp": "0991113999"
+        },
+        {
+            "id": 7,
+            "nama": "Riqi Rayyan Ali",
+            "alamat": "Semolowaru Selatan",
+            "umur": 23,
+            "nphp": "01193999"
+        },
+        {
+            "id": 8,
+            "nama": "Shodik Al Rayyan",
+            "alamat": "Semolowaru Utara",
+            "umur": 29,
+            "nphp": "01929293999"
+        },
+        {
+            "id": 9,
+            "nama": "Rayyan Alfarizqi Ali",
+            "alamat": "Semolowaru Timur",
+            "umur": 18,
+            "nphp": "0223999"
+        },
+        {
+            "id": 10,
+            "nama": "Adam Alfarizqi",
+            "alamat": "Semolowaru Tengah",
+            "umur": 19,
+            "nphp": "0277777999"
+        },
+        {
+            "id": 11,
+            "nama": "Ali Rayyan Adam",
+            "alamat": "Surabaya",
+            "umur": 21,
+            "nphp": "022391111199"
+        }
+    ]
+}
